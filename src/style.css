@@ -1,0 +1,211 @@
+:root {
+    --bg-dark: #0f0a08;
+    --accent-orange: #ff5e1a;
+    --pixel-font: 'DotGothic16', sans-serif;
+    --main-font: 'Inter', sans-serif;
+}
+
+/* GLOBAL */
+body {
+    background-color: #000;
+    color: white;
+    font-family: var(--main-font);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* FRAME */
+.portfolio-frame {
+    width: 90vw;
+    height: 85vh;
+    max-width: 1200px;
+    background: radial-gradient(circle at center, #2a1a14 0%, #0f0a08 100%);
+    border-radius: 40px;
+    padding: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo {
+    font-family: var(--pixel-font);
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    background: rgba(255,255,255,0.03);
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-links a {
+    color: #a1958e;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-orange);
+}
+
+.cv-label {
+    font-family: var(--pixel-font);
+    font-size: 10px;
+    opacity: 0.5;
+}
+
+/* HERO */
+.hero {
+    margin-top: 60px;
+    z-index: 10;
+    max-width: 500px;
+}
+
+.intro {
+    color: #a1958e;
+}
+
+.intro span {
+    color: var(--accent-orange);
+}
+
+h1 {
+    font-family: var(--pixel-font);
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 0.9;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+.description {
+    color: #a1958e;
+    line-height: 1.6;
+}
+
+.btn-hire {
+    background: var(--accent-orange);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(255, 94, 26, 0.3);
+}
+
+/* TESTIMONIAL */
+.testimonial {
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 280px;
+}
+
+.pixel-label {
+    font-family: var(--pixel-font);
+    color: var(--accent-orange);
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.testimonial p {
+    font-size: 12px;
+    margin: 0;
+    color: #a1958e;
+}
+
+/* ORBIT SYSTEM */
+.orbit-system {
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    pointer-events: none;
+}
+
+.orbit-path {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.path-1 { width: 300px; height: 300px; }
+.path-2 { width: 450px; height: 450px; }
+.path-3 { width: 600px; height: 600px; }
+
+/* ICONS */
+.icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* ORBIT ANIMATION */
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateX(var(--distance)) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(var(--distance)) rotate(-360deg);
+    }
+}
+
+.js {
+    --distance: 150px;
+    animation: orbit 10s linear infinite;
+    top: 43%;
+    left: 43%;
+    color: #f7df1e;
+}
+
+.css {
+    --distance: 225px;
+    animation: orbit 15s linear infinite reverse;
+    top: 43%;
+    left: 43%;
+    color: #264de4;
+}
+
+.html {
+    --distance: 300px;
+    animation: orbit 20s linear infinite;
+    top: 43%;
+    left: 43%;
+    color: #e34f26;
+}
